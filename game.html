@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Math Fun Game - Levels</title>
+    <link href="https://fonts.googleapis.com/css2?family=Patrick+Hand&family=Lobster&display=swap" rel="stylesheet">
+    <link rel="icon" href="img/icon2.webp">
+    <style>
+        body {
+            font-family: 'Patrick Hand', cursive; /* Updated font for body */
+            background-color: #ffeb3b; /* Bright yellow background */
+            color: #322d2d;
+            margin: 0;
+            display: flex;
+            align-items: stretch;
+            height: 100vh;
+            overflow: hidden; /* Prevent scrolling */
+        }
+
+        .game-container {
+            display: flex;
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            border-radius: 20px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+            background-color: #ff5722; /* Bright orange */
+        }
+
+        .navigation {
+            width: 250px;
+            margin-right: 20px;
+            background-color: #ff9800; /* Lighter orange */
+            border-radius: 20px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+            padding: 20px;
+        }
+
+        .quiz-container {
+            flex-grow: 1;
+            text-align: center;
+            background-color: #ffffff;
+            border-radius: 20px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+            padding: 20px;
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        h1 {
+            color: #4CAF50;
+            font-size: 36px; /* Larger font size */
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+        }
+
+        h3 {
+            color: #333;
+            font-size: 28px; /* Larger font size */
+            text-align: center;
+        }
+
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        .level {
+            padding: 15px;
+            margin: 10px 0;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            text-align: center;
+            font-size: 20px; /* Increased font size */
+            position: relative; /* For emoji positioning */
+        }
+
+        .level.unlocked {
+            background-color: #4CAF50;
+            color: white;
+        }
+
+        .level.locked {
+            background-color: #f44336;
+            color: white;
+        }
+
+        .level:hover {
+            opacity: 0.8;
+        }
+
+        .emoji {
+            position: absolute;
+            right: 10px;
+            font-size: 24px; /* Larger emoji size */
+        }
+
+        .option {
+            display: inline-block;
+            padding: 20px;
+            margin: 10px;
+            border-radius: 10px;
+            background-color: #ffcc00;
+            cursor: pointer;
+            transition: transform 0.2s;
+            font-size: 20px; /* Increased font size */
+            width: 120px; /* Wider options */
+        }
+
+        .option:hover {
+            transform: scale(1.1);
+        }
+
+        .feedback {
+            margin-top: 10px;
+            font-weight: bold;
+            color: #4CAF50;
+            font-size: 22px; /* Larger feedback text */
+        }
+
+        button {
+            padding: 15px 30px;
+            margin-top: 20px;
+            border: none;
+            border-radius: 10px;
+            background-color: #4CAF50;
+            color: white;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            font-size: 20px; /* Increased font size */
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+
+        .score {
+            font-size: 24px; /* Increased font size for score display */
+            margin-top: 10px;
+            color: #333;
+        }
+
+        .welcome-prompt {
+            text-align: center;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center; /* Center vertically */
+            height: 100%; /* Full height of the container */
+            background-color: #ffeb3b; /* Bright yellow background for the prompt */
+            position: absolute; /* Position it absolutely */
+            top: 0; /* Align to the top */
+            left: 0; /* Align to the left */
+            right: 0; /* Align to the right */
+            bottom: 0; /* Align to the bottom */
+            z-index: 10; /* Ensure it is above other elements */
+        }
+
+        .welcome-message {
+            font-size: 48px; /* Increased font size */
+            margin-bottom: 20px;
+            color: #3a0fe9; /* Color for the message */
+            font-weight: bold; /* Bold text */
+            transition: transform 0.3s ease; /* Transition for the welcome message */
+        }
+
+        .adventure-text {
+            font-family: 'Lobster', cursive; /* New font for adventure text */
+            font-size: 32px; /* Increased font size for the adventure text */
+            margin-bottom: 30px; /* Space below the text */
+            color: #de2ab1; /* Color for the text */
+            text-align: center; /* Center the text */
+        }
+
+        .start-button {
+            padding: 15px 30px;
+            background-color: #ff9800; /* Orange color for the button */
+            color: white;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+            font-size: 24px; /* Larger font size for the button */
+            transition: background-color 0.3s, transform 0.3s; /* Transition for button */
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Add shadow for depth */
+        }
+
+        .start-button:hover {
+            background-color: #fb8c00; /* Darker orange on hover */
+            transform: scale(1.05); /* Slightly enlarge the button on hover */
+        }
+    </style>
+</head>
+<body>
+<div class="game-container">
+    <div class="navigation">
+        <header>
+            <h1>Math Fun Game 🎉</h1>
+        </header>
+        <ul>
+            <li class="level unlocked" onclick="startLevel(1)">Level 1: Counting <span class="emoji">✅</span></li>
+            <li class="level locked" id="level2" onclick="startLevel(2)">Level 2: Addition <span class="emoji">🔒</span></li>
+            <li class="level locked" onclick="alert('Complete Level 2 to unlock!')">Level 3: Subtraction <span class="emoji">🔒</span></li>
+            <li class="level locked" onclick="alert('Complete Level 3 to unlock!')">Level 4: Multiplication <span class="emoji">🔒</span></li>
+            <li class="level locked" onclick="alert('Complete Level 4 to unlock!')">Level 5: Division <span class="emoji">🔒</span></li>
+            <li class="level locked" onclick="alert('Complete Level 5 to unlock!')">Level 6: All Operations <span class="emoji">🔒</span></li>
+        </ul>
+    </div>
+    <div class="quiz-container" id="quiz-container" style="display:none;">
+        <h3 id="question"></h3>
+        <div id="options"></div>
+        <div id="score" class="score" style="display:none;"></div> <!-- Score display -->
+        <button id="next-button" style="display:none;" onclick="nextQuestion()">Next Question</button>
+        <div id="feedback" class="feedback"></div>
+        <button id="back-button" style="display:none;" onclick="goBack()">Back</button>
+    </div>
+    <div class="welcome-prompt" id="welcome-prompt">
+        <div class="welcome-message">Welcome to Math Quiz! 🎉</div>
+        <div class="adventure-text">Hey 🎲 Ready to unlock the adventure of Level 1</div>
+        <button class="start-button" onclick="startLevel(1)">Level 1</button>
+    </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
