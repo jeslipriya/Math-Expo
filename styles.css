@@ -1,0 +1,80 @@
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: #ffeb3b; /* Bright yellow background */
+    color: #3f51b5; /* Deep blue text color */
+    display: flex;
+    justify-content: center;
+    align-items: center; /* Center vertically */
+    min-height: 100vh; /* Full height */
+    margin: 0; /* Remove default margin */
+    text-align: center; /* Center text */
+}
+
+.home-container {
+    background-color: #ffffff; /* White background for the container */
+    border-radius: 15px; /* Rounded corners */
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2); /* Subtle shadow */
+    padding: 30px; /* Padding around the content */
+    width: 80%;
+    max-width: 600px; /* Limit max width */
+}
+
+h1 {
+    font-family: 'Bungee', cursive; /* Fun font for the title */
+    font-size: 2.5em; /* Larger font size */
+    color: #ff5722; /* Bright orange color */
+}
+
+h2 {
+    font-size: 2em; /* Slightly smaller font size */
+    color: #ff24a0; /* Purple color */
+    font-family:Georgia, 'Times New Roman', Times, serif;
+}
+
+p {
+    font-size: 1.8em; /* Medium font size */
+    margin: 20px 0; /* Margin around the paragraph */
+    color: darkorchid;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+
+label {
+    font-weight: bold; /* Bold labels */
+}
+
+input {
+    padding: 10px; /* Padding inside input fields */
+    margin: 10px 0; /* Margin around input fields */
+    border: 2px solid #3f51b5; /* Border color */
+    border-radius: 5px; /* Rounded corners for input fields */
+    width: 100%; /* Full width */
+}
+
+button {
+    padding: 15px 30px; /* Increased padding for larger button */
+    font-size: 1.5em; /* Larger font size for button text */
+    border: none; /* No border */
+    border-radius: 5px; /* Rounded corners */
+    background-color: #3f51b5; /* Button color */
+    color: white; /* Text color */
+    cursor: pointer; /* Pointer cursor on hover */
+    transition: background-color 0.3s; /* Smooth background transition */
+    margin-top: 20px; /* Margin above the button */
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+button:hover {
+    background-color: #303f9f; /* Darker shade on hover */
+}
+
+.feedback {
+    margin-top: 20px; /* Margin above feedback messages */
+    font-size: 1.2em; /* Font size for feedback */
+    color: #ff6347; /* Color for feedback messages */
+}
+
+/* Center the Play Now button */
+#play-button {
+    display: block; /* Make it a block element */
+    margin: 20px auto; /* Center horizontally */
+}
