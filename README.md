@@ -1,14 +1,14 @@
-# Math Fun Game 🎲
+# Math Fun Game 
 
 ## Overview
 Math Fun Game is an interactive and engaging web-based game designed to make learning math fun. It features colorful animations, sound effects, and an exciting level-based structure to improve mathematical skills.
 
 ## Features
-- 🎨 **Colorful & User-Friendly UI**: Engaging design with animations and sound effects.
-- 🔢 **Multiple Levels**: Unlock levels as you progress, from counting to all operations.
-- 🔊 **Interactive Sound Effects**: Enhances the gaming experience.
-- 📜 **Dynamic Questions**: Different questions for each level.
-- 🏆 **Score Tracking**: Displays the player's score after each round.
+- **Colorful & User-Friendly UI**: Engaging design with animations and sound effects.
+- **Multiple Levels**: Unlock levels as you progress, from counting to all operations.
+- **Interactive Sound Effects**: Enhances the gaming experience.
+- **Dynamic Questions**: Different questions for each level.
+- **Score Tracking**: Displays the player's score after each round.
 
 ## Technologies Used
 - **Frontend**: HTML, CSS, JavaScript
@@ -18,7 +18,7 @@ Math Fun Game is an interactive and engaging web-based game designed to make lea
 ## Installation & Usage
 1. **Clone the repository:**
    ```bash
-   git clone https://github.com/yourusername/math-fun-game.git
+   git clone https://github.com/jeslipriya/Math-Expo.git
    ```
 2. **Navigate to the project folder:**
    ```bash
@@ -42,12 +42,9 @@ Math Fun Game is an interactive and engaging web-based game designed to make lea
 
 ## Contributing
 Feel free to contribute by:
-- Reporting bugs 🐞
-- Adding new levels 📈
-- Improving the UI 🎨
-
-## License
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+- Reporting bugs 
+- Adding new levels 
+- Improving the UI 
 
 ---
-Happy Learning! 🚀
+Happy Learning! 
